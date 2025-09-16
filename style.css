@@ -41,7 +41,6 @@ main {
     padding: 20px;
 }
 
-
 .about-me {
     background: white;
     padding: 20px 30px;
@@ -61,12 +60,11 @@ main {
     color: #555;
 }
 
-
 .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .card {
@@ -75,8 +73,13 @@ main {
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     transition: box-shadow 0.3s ease;
     overflow: hidden;
-    text-align: center;  /* centers description text */
-    padding: 15px;       /* reduced padding */
+    text-align: center;
+}
+
+.card a {
+    display: block; /* make entire card clickable */
+    text-decoration: none;
+    color: inherit;
 }
 
 .card:hover {
@@ -85,19 +88,21 @@ main {
 
 .card img {
     width: 100%;       /* full card width */
-    height: auto;      /* maintain aspect ratio */
+    height: 200px;     /* fixed height for uniformity */
+    object-fit: contain; /* preserve logo aspect ratio */
     border-radius: 10px;
     display: block;
     margin-bottom: 10px; /* space below image for description */
 }
 
 .card p {
-    margin: 10px 0 0 0;
+    margin: 0;
     font-weight: bold;
     color: #333;
+    font-size: 1rem;
 }
 
-
+/* Footer styling */
 footer {
     background-color: #333;
     color: white;
@@ -109,7 +114,7 @@ footer p {
     margin: 10px 0;
 }
 
-/* Responsive stacking for smaller screens */
+/* Responsive grid */
 @media (max-width: 900px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
